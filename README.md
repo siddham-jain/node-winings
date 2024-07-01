@@ -1,4 +1,4 @@
-## NodeJS Short Notes
+## NodeJS Notes
 - NodeJS is a runtime environment for executing JavaScript code.
 - NodeJS is built on Chrome's V8 JavaScript engine.
 - NodeJS is a cross-platform runtime environment.

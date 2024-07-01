@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const fs = require('fs');
 // const data = fs.readFileSync('file.txt');
 // const path = require("path");
 // console.log(""+data.toString());
@@ -65,5 +65,31 @@
 //         console.log("File copied");
 //     }
 // });
+
 const http = require('http');
+const server = http.createServer((req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    if (req.url === '/login') {
+        res.write('<html lang="en"><head><title>Login Page</title></head>');
+        res.write('<body><h1>Hello Login</h1></body></html>');
+    } else if(req.url === '/index'){
+        fs.readFile('index.html', 'utf-8', (err, data) => {
+            if(err){
+                console.log(err);
+            } else{
+                res.write(data);
+            }
+            res.end();
+        });
+    } else {
+        res.write('<html lang="en"><head><title>NodeJS Class</title></head>');
+        res.write('<body><h1>Hello World</h1></body></html>');
+    }
+});
+const port = 3000;
+const host = 'localhost';
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});
+
 
