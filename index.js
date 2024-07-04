@@ -72,6 +72,7 @@ const server = http.createServer((req, res) => {
     if (req.url === '/login') {
         res.write('<html lang="en"><head><title>Login Page</title></head>');
         res.write('<body><h1>Hello Login</h1></body></html>');
+        res.end();
     } else if(req.url === '/index'){
         fs.readFile('index.html', 'utf-8', (err, data) => {
             if(err){
@@ -84,12 +85,18 @@ const server = http.createServer((req, res) => {
     } else {
         res.write('<html lang="en"><head><title>NodeJS Class</title></head>');
         res.write('<body><h1>Hello World</h1></body></html>');
+        res.end();
     }
+
 });
 const port = 3000;
 const host = 'localhost';
 server.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`);
 });
+ // http://localhost:3000/login
+// http://localhost:3000/index
+//  http://localhost:3000
+
 
 
