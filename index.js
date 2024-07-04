@@ -94,9 +94,5 @@ const host = 'localhost';
 server.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`);
 });
- // http://localhost:3000/login
-// http://localhost:3000/index
-//  http://localhost:3000
-
 
 
